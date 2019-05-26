@@ -3,7 +3,6 @@ const axios = require('axios');
 const getBacklinks = (url, res) => {
     axios.get(url)
         .then((resposne) => {
-            console.log(resposne.data)
             if (resposne.data === 'Validation Error : target') {
                 const data = {
                     status: 'ok',

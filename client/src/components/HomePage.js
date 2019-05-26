@@ -25,7 +25,7 @@ export default class HomePage extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='bg-red' >
                 <h1>Tool to find the best and worst backlinks from SEMRush </h1>
                 <BacklinksForm 
                     handleAddBacklinks = {this.handleAddBacklinks}

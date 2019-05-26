@@ -11,8 +11,8 @@ const Backlinks = (props) => (
     {
       
         <Backlink
-          key={backlink}
-          backlinkText={backlinks}
+          key={props.backlinks}
+          backlinkText={props.backlinks}
         />
       
     }
