@@ -4,7 +4,7 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "start-dev-client": "webpack-dev-server & npm run build:dev",
+    "dev-client": "webpack-dev-server && npm run build:dev",
     "build:dev": "webpack --watch --env development",
     "build:prod": "webpack --env production",
     "test": "echo \"Error: no test specified\" && exit 1"

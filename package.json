@@ -4,7 +4,9 @@
   "description": "SEMrush React and Node API  ===",
   "main": "index.js",
   "scripts": {
-    "start": "cd backend/ && npm run start-prod-server",
+    "install-all": "npm run heroku-prebuild",
+    "start-dev": "cd backend/ && npm run start-dev-server",
+    "start": "cd backend/ && npm run prod-server",
     "heroku-prebuild": "cd client/ && npm install && cd ../backend/ && npm install",
     "heroku-postbuild": "cd client/ && npm run build:prod",
     "test": "echo \"Error: no test specified\" && exit 1"

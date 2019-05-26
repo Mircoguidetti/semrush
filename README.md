@@ -12,24 +12,34 @@ In order to download and run this application you'll need these programs:
 Clone the project and execute:
 
 ```
-git clone https://github.com/Mircoguidetti/SEMrush-backlinks-api.git
-cd SEMrush-backlinks-api/
+git clone https://github.com/Mircoguidetti/semrush-react-node-api.git
+cd semrush-react-node-api/
 ```
 
-## First setup and  run the application
-
-Install dependencies and run client and backend servers
-
-```
-> bash install.sh
-```
-
-`install.sh` will execute `npm install` for you installing client and backend dependencies and will run the servers. However you only need to run this command  for the first time when you've cloned the application. Afterwards it's preferable to start the servers using:
+## Add API key
+Create a file inside the config directory  `cd backend/config/` and call it  `dev.js`.
+You need to export an object like this:
 
 ```
-bash start-dev.sh
+module.exports = {
+    semRushApiKey: 'your-api-key' 
+};
 ```
 
-`start-dev.sh` will only run the servers without install the dependencies 
+## Install dependencies
+
+```
+> npm run install-all
+```
+
+`install-all` will execute `npm install` for you installing client and backend dependencies. 
+
+## Run development server
+
+```
+npm run start-dev-server
+```
+
+`start-dev-server` will run the client and backend servers in concurrently
 
 
