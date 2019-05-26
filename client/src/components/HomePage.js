@@ -1,47 +1,26 @@
 import React from 'react';
+import axios from 'axios';
 import BacklinksForm from './BacklinksForm'
 import Backlinks from './Backlinks'
-import axios from 'axios';
 
-export class HomePage extends React.Component {
+export default class HomePage extends React.Component {
     state = {
-        backlinks: []
+        backlinks: ''
     }
 
     handleAddBacklinks = (backlink) => {
-        if (!backlink) {
-            return 'Enter valid value to add backlink';
-        } else if (this.state.backlinks.indexOf(backlink) > -1) {
-            return 'This option already exists';
-        }
-        console.log(backlink)
+        // console.log(backlink)
         axios.get(`/api/backlinks/${backlink}`)
           .then((response) => {
             if (response.data.status === 'error') {
-              this.setState({'backlinks':['Not found']})
+              this.setState({'backlinks':response.data.message})
             }else if (response.data.status === 'ok') {
-              this.setState({backlinks:[response.data.backlinks]})
+            //   console.log(this.state)
+              this.setState({backlinks:response.data.backlinks})
             }
           }).catch((error) => {
-            this.setState({backlinks:['Internal server error.']})
+            this.setState({backlinks:'Internal server error. Unable to fetch internal API'})
           })
-      }
-
-    componentDidMount() {
-        try {
-          const json = localStorage.getItem('backlinks');
-          const backlinks = JSON.parse(json);
-    
-          if (backlinks) {
-            localStorage.clear();
-          }
-        } catch (e) {
-          // Do nothing at all
-        }
-      }
-      componentDidUpdate(prevProps, prevState) {
-        const json = JSON.stringify(this.state.backlinks);
-        localStorage.setItem('backlinks', json);
       }
 
     render() {
@@ -59,8 +38,5 @@ export class HomePage extends React.Component {
         )
     }
 }
-
-
-export default HomePage;
  
     
