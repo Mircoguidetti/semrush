@@ -1,8 +1,6 @@
-SEMrush Backlinks API
+SEMrush React and Node API 
 ===
-
-> React and Node API to find the best and worst backlinks for a domain using SEMrush API
-
+ 
 ## Prerequisites
 
 In order to download and run this application you'll need these programs:
