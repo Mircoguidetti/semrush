@@ -7,39 +7,24 @@ In order to download and run this application you'll need these programs:
 - [Git](https://git-scm.com/)
 - [Node.js >= 11.9.0](https://nodejs.org/en/)
 
-## Running the app
+## Get Started
 
-Clone the project and execute:
+1. Clone the repo
 
-```
-git clone https://github.com/Mircoguidetti/semrush-react-node-api.git
-cd semrush-react-node-api/
-```
+2. Run `npm run install-all`
 
-## Add API key
-Create a file inside the config directory  `cd backend/config/` and call it  `dev.js`.
+3. Create a file inside the config directory  `cd backend/config/` and call it  `dev.js`.
 You need to export an object like this:
 
-```
-module.exports = {
-    semRushApiKey: 'your-api-key' 
-};
-```
-
-## Install dependencies
-
-```
-> npm run install-all
+```js
+    module.exports = {
+        semRushApiKey: 'your-api-key' 
+    };
 ```
 
-`install-all` will execute `npm install` for you installing client and backend dependencies. 
+4. Run `npm run start-dev` to start up the development environment
 
-## Run development server
+5. Head over to `localhost:8000` 
 
-```
-npm run start-dev-server
-```
-
-`start-dev-server` will run the client and backend servers in concurrently
 
 
