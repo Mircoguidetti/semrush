@@ -32,7 +32,3 @@ const getOrganicKeywords = (url, res) => {
 };
 
 module.exports = getOrganicKeywords;
-
-`https://api.semrush.com/?type=domain_organic&key=f3daea09a3131a99fb368dab5645e11e&
-display_filter=%2B%7CPh%7CCo%7Cseo&display_limit=10&export_columns=Ph,Po,Pp,Pd,Nq,Cp,Ur,Tr,Tc,Co,Nr,Td&
-domain=reboot.com&database=us&display_sort=po_asc&display_offset=5`
