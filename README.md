@@ -13,7 +13,7 @@ In order to download and run this application you'll need these programs:
 
 2. Run `npm run install-all`
 
-3. Create a file inside the config directory  `cd backend/config/` and call it  `dev.js`.
+3. Create a file inside the config directory  `cd server/config/` and call it  `dev.js`.
 You need to export an object like this:
 
 ```js
