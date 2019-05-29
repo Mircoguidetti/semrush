@@ -1,24 +1,32 @@
 {
-  "name": "semrush-api",
+  "name": "semrush-react-node-api",
   "version": "1.0.0",
   "description": "SEMrush React and Node API  ===",
   "main": "index.js",
   "scripts": {
-    "install-all": "npm run heroku-prebuild",
-    "start-dev": "cd backend/ && npm run start-dev-server",
-    "start": "cd backend/ && npm run prod-server",
-    "heroku-prebuild": "cd client/ && npm install && cd ../backend/ && npm install",
-    "heroku-postbuild": "cd client/ && npm run build:prod",
+    "install-all": "npm install && npm install --prefix client",
+    "start-dev": "concurrently \"nodemon ./server/server.js\" \"npm run build:dev --prefix client\"",
+    "start": "node ./server/server.js",
+    "heroku-prebuild": "npm run install-all",
+    "heroku-postbuild": "npm run build:prod --prefix client",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mircoguidetti/SEMrush-API.git"
+    "url": "git+https://github.com/Mircoguidetti/semrush-react-node-api.git"
   },
   "author": "Mirco Guidetti",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Mircoguidetti/SEMrush-API/issues"
+    "url": "https://github.com/Mircoguidetti/semrush-react-node-api/issues"
   },
-  "homepage": "https://github.com/Mircoguidetti/SEMrush-API#readme"
+  "homepage": "https://github.com/Mircoguidetti/semrush-react-node-api#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.19.1"
+  }
 }

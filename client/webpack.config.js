@@ -1,7 +1,7 @@
 require('@babel/polyfill');
 const path = require('path');
 
-module.exports = (env, argv) => {
+module.exports = (env) => {
     const isProduction = env === 'production'
     return {
         mode: isProduction ? 'production': 'development',
@@ -33,8 +33,10 @@ module.exports = (env, argv) => {
         devServer: {  // configuration for webpack-dev-server
             contentBase: path.join(__dirname, 'public'), //source of static assets
             historyApiFallback: true, // send all the endpoint to index.html
-            port: 8080, // port to run dev-server
-            proxy: { "/api/backlinks/**": { target: 'http://localhost:8000', secure: false }  }
+            port: 3000, // port to run dev-server
+            proxy: { "/api/databases": { target: 'http://localhost:8000', secure: false }  },
+            proxy: { "/api/backlinks/**": { target: 'http://localhost:8000', secure: false }  },
+            proxy: { "/api/organic-keywords/**": { target: 'http://localhost:8000', secure: false }  }
         
         } 
     }

@@ -4,8 +4,7 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "dev-client": "webpack-dev-server && npm run build:dev",
-    "build:dev": "webpack --watch --env development",
+    "build:dev": "webpack --watch",
     "build:prod": "webpack --env production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -28,9 +27,5 @@
     "style-loader": "^0.23.1",
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2"
-  },
-  "devDependencies": {
-    "live-server": "^1.2.1",
-    "webpack-dev-server": "^3.4.1"
   }
 }
