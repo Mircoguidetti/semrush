@@ -29,15 +29,6 @@ module.exports = (env) => {
         performance : {
             hints : false
         },        
-        devtool: isProduction ? 'source-map' : 'inline-source-map',
-        devServer: {  // configuration for webpack-dev-server
-            contentBase: path.join(__dirname, 'public'), //source of static assets
-            historyApiFallback: true, // send all the endpoint to index.html
-            port: 3000, // port to run dev-server
-            proxy: { "/api/databases": { target: 'http://localhost:8000', secure: false }  },
-            proxy: { "/api/backlinks/**": { target: 'http://localhost:8000', secure: false }  },
-            proxy: { "/api/organic-keywords/**": { target: 'http://localhost:8000', secure: false }  }
-        
-        } 
+        devtool: isProduction ? 'source-map' : 'inline-source-map'
     }
 };

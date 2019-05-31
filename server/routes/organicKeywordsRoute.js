@@ -1,12 +1,13 @@
 const getOrganicKeywords = require('../semrush-api/getOrganicKeywords');
-const getUrls = require('../config/urls');
+const getApiEndpoint = require('../config/semrush/semrush-api-endpoints');
 
-// Backlinks route
+// Organic keywords route
 module.exports = (app) => {
     app.get('/api/organic-keywords/', (req, res) => {
-        const url = getUrls('organic-keywords',req.query.domain, req.query.database)
-        // const url = 'https://www.rebootonline.com/'
+        const domain = req.query.domain;
+        const database = req.query.database;
+        const url = getApiEndpoint('organic-keywords',domain, database);
         
         getOrganicKeywords(url, res);
     });
-}
+};

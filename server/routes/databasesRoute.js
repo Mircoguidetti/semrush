@@ -1,6 +1,4 @@
-const path = require('path');
-const databases = require('../semrush-api/databases');
-
+const databases = require('../config/semrush/databases');
 
 // Index route
 module.exports = (app) => {

@@ -18,7 +18,7 @@ export default class OrganicKeywordsForm extends React.Component {
       })
       .catch((error) => {
         console.log(error);
-      })
+      });
   }
 
   handleAddKeywords = (e) => {
@@ -29,20 +29,18 @@ export default class OrganicKeywordsForm extends React.Component {
         if (domain.length > 0) {
           this.props.handleAddKeywords(domain, database);
           e.target.elements.domain.value = '';
-          this.setState({error:''})
+          this.setState({error:''});
         }else {
-          this.setState({error:'Please add a valid domain'})
+          this.setState({error:'Please add a valid domain'});
         }        
     };
 
-
-
     render() {
         return (
-          <div>
+          <div className='form__div'>
             <form onSubmit={this.handleAddKeywords}>
-              <input type="text" name="domain" placeholder='Search domain'/>
-              <select name='database'>
+              <input className='form__input' type="text" name="domain" placeholder='Search domain'/>
+              <select className='form__select' name='database'>
               {this.state.databases.map((database) => {
                 return  <option 
                           key={database.code}
@@ -51,9 +49,8 @@ export default class OrganicKeywordsForm extends React.Component {
                           {database.country}
                         </option>
               })}
-               
               </select>
-              <button>Submit</button>
+              <button className='form__button'>Submit</button>
               {this.state.error.length > 0 ? this.state.error: ''}
             </form>
           </div>

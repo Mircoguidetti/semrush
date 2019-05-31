@@ -1,4 +1,4 @@
-const { semRushApiKey } = require('./keys');
+const { semRushApiKey } = require('../keys');
 
 module.exports = (typeApi, domain, database) => {
     switch(typeApi) {

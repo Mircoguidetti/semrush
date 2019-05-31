@@ -1,4 +1,5 @@
 const axios = require('axios');
+const formatApiResponse = require('../utils/formatApiResponse');
 
 const getOrganicKeywords = (url, res) => {
     axios.get(url)
@@ -10,12 +11,16 @@ const getOrganicKeywords = (url, res) => {
                     keywords:'Validation error. Wrong API Key'
                 };
                 return res.send(JSON.stringify(data));
-            } 
+            }
+
+            const formatattedApiResponse =  formatApiResponse(resposne.data);
+            // console.log(formatattedApiResponse)
             const data = {
                 status: 'ok',
                 code: 200,
-                keywords:resposne.data
+                keywords:formatattedApiResponse
             };
+            
             
             return res.send(JSON.stringify(data));
         })
