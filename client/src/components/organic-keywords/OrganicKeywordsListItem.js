@@ -3,6 +3,7 @@ import uuid from 'uuid';
 
 const OrganicKeywordsListItem = (props) => (
   <div>
+    <p className='error'>{props.error}</p>
     {props.keywordsText.map((ele) => {
         return (
           <li className='list__item'>

@@ -5,5 +5,5 @@ const publicPath = path.join(__dirname, '../..', 'client', 'public');
 module.exports = (app) => {
     app.get('*', (req, res) => {
         res.sendFile(path.join(publicPath, 'index.html'))
-    })
+    });
 };

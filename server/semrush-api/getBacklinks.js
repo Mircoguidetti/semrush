@@ -2,8 +2,9 @@ const axios = require('axios');
 
 const getBacklinks = (url, res) => {
     axios.get(url)
-        .then((resposne) => {
-            if (resposne.data === 'Validation Error : target') {
+        .then((response) => {
+            console.log(response.data)
+            if (response.data === 'Validation Error : target') {
                 const data = {
                     status: 'ok',
                     code: 403,
@@ -14,11 +15,12 @@ const getBacklinks = (url, res) => {
             const data = {
                 status: 'ok',
                 code: 200,
-                backlinks:resposne.data
+                backlinks:response.data
             };
             return res.send(JSON.stringify(data));
         })
         .catch((error) => {
+            console.log(error)
             
             if (error.code === 'ENOTFOUND') {
                 const data = {

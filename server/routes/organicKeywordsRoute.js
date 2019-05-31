@@ -7,6 +7,7 @@ module.exports = (app) => {
         const domain = req.query.domain;
         const database = req.query.database;
         const url = getApiEndpoint('organic-keywords',domain, database);
+        console.log(url)
         
         getOrganicKeywords(url, res);
     });
