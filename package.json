@@ -1,7 +1,7 @@
 {
-  "name": "semrush-react-node-api",
+  "name": "semrush",
   "version": "1.0.0",
-  "description": "SEMrush React and Node API  ===",
+  "description": "SEMrush Application",
   "main": "index.js",
   "scripts": {
     "install-all": "npm install && npm install --prefix client",
